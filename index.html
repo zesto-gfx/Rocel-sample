@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para sa Iyo, Mahal naming Guro 💐</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="decor sunflower">🌻</div>
+    <div class="decor hibiscus">🌺</div>
+    <div class="decor flower-bot">💐</div>
+    <div class="decor leaf-bot">🍃</div>
+    <div class="decor star-left">⭐</div>
+    <div class="decor sparkle1">🏵️</div>
+    <div class="decor sparkle2">🌷</div>
+
+    <div class="wrapper">
+        <div class="card">
+            <div class="heart-icon">💝</div>
+            <h1>Happy Teacher's Day</h1>
+            <p class="subtitle">Thank you very much, Mam Marifel Laynesa for teaching us and for being responsible as our teacher.</p>
+
+            
+            <div class="teacher-photo">
+                <img src="picture.jpg" alt="Image">
+            </div>
+
+            <div class="audio-box">
+                <span class="note-icon" id="noteIcon">🎶</span>
+                <div class="audio-info">
+                    <div class="audio-title">Click Here</div>
+                    <div class="audio-note" id="audioNote">🎵</div>
+                </div>
+                <button id="playBtn" onclick="toggleAudio()">▶</button>
+            </div>
+
+            <audio id="bgMelody" loop>
+                <source src="Song.mp3" type="audio/mpeg">
+             <!-- ✅ Inayos ang kulang na closing tag -->
+            
+        </div>
+    </div>
+
+    <script> 
+        const melody = document.getElementById("bgMelody");
+        const playBtn = document.getElementById("playBtn");
+        const audioNote = document.getElementById("audioNote");
+        const noteIcon = document.getElementById("noteIcon");
+
+        function toggleAudio() {
+            if (melody.paused) {
+                melody.play();
+                playBtn.innerHTML = "⏸";
+                audioNote.innerHTML = "Tyler Collins - Thanks to you";
+                noteIcon.classList.add("playing");
+            } else {
+                melody.pause();
+                playBtn.innerHTML = "▶";
+                audioNote.innerHTML = "Stop";
+                noteIcon.classList.remove("playing");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(180deg, #e6f0fa 0%, #f0f6ff 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.decor {
+    position: absolute;
+    font-size: 32px;
+    pointer-events: none;
+    animation: float 4s ease-in-out infinite;
+    z-index: 1;
+}
+
+.sunflower { top: 30px; left: 15px; animation-delay: 0s; }
+.hibiscus { top: 35px; right: 20px; animation-delay: 1s; }
+.flower-bot { bottom: 40px; left: 20px; animation-delay: 2s; }
+.leaf-bot { bottom: 35px; right: 25px; animation-delay: 3s; }
+.star-left { top: 50%; left: 10px; font-size: 24px; opacity: 0.7; animation-delay: 0.5s; }
+.sparkle1 { top: 15%; left: 8px; font-size: 20px; animation: twinkle 2s ease-in-out infinite; }
+.sparkle2 { top: 25%; right: 6px; font-size: 18px; animation: twinkle 2.5s ease-in-out infinite 1s; }
+
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+.teacher-photo {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.teacher-photo img {
+    width: 320px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    border: 4px solid #f8d7da;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.teacher-photo img:hover {
+    transform: scale(1.05);
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.card {
+    width: 100%;
+    max-width: 420px;
+    background: #fff;
+    border-radius: 30px;
+    padding: 40px 25px;
+    box-shadow: 0 8px 25px rgba(100, 120, 150, 0.1);
+    text-align: center;
+    animation: cardAppear 1s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+@keyframes cardAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.heart-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+h1 {
+    font-size: 36px;
+    color: #FF66CC;
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards 0.3s;
+}
+
+.subtitle {
+    font-size: 17px;
+    color: #7a7068;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards 0.5s;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.audio-box {
+    background: linear-gradient(90deg, #fff3e8, #f6eefc);
+    padding: 14px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards 0.8s;
+}
+
+.note-icon {
+    font-size: 24px;
+    transition: 0.3s;
+}
+.note-icon.playing {
+    animation: bounce 0.6s ease-in-out infinite;
+}
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.audio-info {
+    flex: 1;
+    text-align: left;
+}
+.audio-title {
+    font-weight: bold;
+    color: #6b5290;
+    font-size: 16px;
+}
+.audio-note {
+    font-size: 13px;
+    color: #999;
+    margin-top: 2px;
+}
+
+#playBtn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: #f9d89c;
+    color: #8b6020;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#playBtn:hover {
+    transform: scale(1.1);
+    background: #F8C8DC;
+}
